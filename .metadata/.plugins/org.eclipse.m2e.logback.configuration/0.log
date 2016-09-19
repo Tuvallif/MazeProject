@@ -1,0 +1,33 @@
+2016-09-19 20:29:18,551 [Worker-28] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: org.tuval:mazeCLI:0.0.1-SNAPSHOT @ C:\github\MazeProject\mazeCLI\pom.xml.
+2016-09-19 20:29:18,689 [Worker-28] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: org.tuval:maze:0.0.1-SNAPSHOT @ C:\github\MazeProject\MyMaze2\pom.xml.
+2016-09-19 20:29:19,432 [Worker-28] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /MyMaze2/src/main/java
+2016-09-19 20:29:19,433 [Worker-28] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /MyMaze2/src/main/resources
+2016-09-19 20:29:19,435 [Worker-28] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /MyMaze2/src/test/java
+2016-09-19 20:29:19,576 [Worker-28] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /mazeCLI/src/main/java
+2016-09-19 20:29:19,577 [Worker-28] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /mazeCLI/src/test/java
+2016-09-19 20:29:19,666 [Worker-28] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 2 project(s) in 9 sec
+2016-09-19 20:29:21,410 [Worker-27] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1255 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-09-19 20:29:21,420 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2016-09-19 20:29:21,448 [Worker-27] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1255 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-09-19 20:29:21,449 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\github\MazeProject\MyMaze2\src\test\resources
+2016-09-19 20:29:22,348 [Worker-27] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1255 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-09-19 20:29:22,349 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\github\MazeProject\mazeCLI\src\main\resources
+2016-09-19 20:29:22,351 [Worker-27] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1255 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-09-19 20:29:22,580 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\github\MazeProject\mazeCLI\src\test\resources
+2016-09-19 20:29:48,803 [Worker-27] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2016-09-19 20:29:49,800 [Worker-27] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: org.tuval:mazeCLI:0.0.1-SNAPSHOT @ C:\github\MazeProject\mazeCLI\pom.xml.
+2016-09-19 20:29:49,895 [Worker-27] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: org.tuval:maze:0.0.1-SNAPSHOT @ C:\github\MazeProject\MyMaze2\pom.xml.
+2016-09-19 20:29:50,259 [Worker-27] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /mazeCLI/src/main/java
+2016-09-19 20:29:50,260 [Worker-27] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /mazeCLI/src/test/java
+2016-09-19 20:29:50,331 [Worker-27] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /MyMaze2/src/main/java
+2016-09-19 20:29:50,332 [Worker-27] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /MyMaze2/src/main/resources
+2016-09-19 20:29:50,332 [Worker-27] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /MyMaze2/src/test/java
+2016-09-19 20:29:50,545 [Worker-27] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2016-09-19 20:29:50,915 [Worker-27] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1255 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-09-19 20:29:50,917 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2016-09-19 20:29:50,945 [Worker-27] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1255 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-09-19 20:29:50,946 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\github\MazeProject\MyMaze2\src\test\resources
+2016-09-19 20:29:51,623 [Worker-27] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1255 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-09-19 20:29:51,625 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\github\MazeProject\mazeCLI\src\main\resources
+2016-09-19 20:29:51,626 [Worker-27] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1255 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-09-19 20:29:51,628 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\github\MazeProject\mazeCLI\src\test\resources
