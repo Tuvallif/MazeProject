@@ -14,11 +14,10 @@ public class DisplayCommand implements Command {
 		this.m = m;
 	}
 	
-	@Override
 	public void doCommand(String[] params) {
 		Maze3d mazeToPrnt = m.getMazeByName(params[1]);
 		if(mazeToPrnt != null){
-			v.PrintMazeOnScreen(mazeToPrnt.getBoard());		
+			v.PrintMazeOnScreen(mazeToPrnt.getb);		
 		}else{
 			v.printLineOnScreen("The requested maze was not found- please try again with a correct name.");
 		}

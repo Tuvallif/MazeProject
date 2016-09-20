@@ -14,7 +14,7 @@ public class DirCommand implements Command {
 		this.m = m;
 	}
 	
-	@Override
+
 	public void doCommand(String[] params) {
 		File fileToSend;
 		try{

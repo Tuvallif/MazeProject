@@ -23,7 +23,7 @@ public class DisplaySolutionCommand implements Command {
 		this.v = v;
 		this.m = m;
 	}
-	@Override
+
 	public void doCommand(String[] params) {
 		List<Position> pathToWalk;
 		Maze3d MyMaze = m.getMazeByName(params[1]);
