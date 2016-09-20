@@ -37,6 +37,7 @@ public class Run {
 			maze.getCrossSectionByX(-1);
 		} catch (IndexOutOfBoundsException e) {
 			System.out.println("good!");
+			int i;
 		}
 	}
 	
