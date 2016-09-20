@@ -14,15 +14,17 @@ public class LoadCommand implements Command {
 
 	View v;
 	Model m;
+	File myFileToOpen;
+	String name;
 	
 	public LoadCommand(View v, Model m) {
 		this.v = v;
 		this.m = m;
+		
 	}
 	@Override
-	public void doCommand(String[] params) {
-		byte [] mazeAsByte = new byte[1000];
-		File myFileToOpen = m.getFileFromPath(params[1]);
+	public void doCommand() {
+		byte[] mazeAsByte = new byte[1000];
 		if(myFileToOpen != null){
 			try{
 				FileInputStream fis = new FileInputStream(myFileToOpen);
@@ -35,9 +37,17 @@ public class LoadCommand implements Command {
 			catch(IOException ioe){
 				v.printLineOnScreen("There was a problem reading from the file/closing the file.");
 			}
-			m.generateMaze(params[2], mazeAsByte);
+			m.generateMaze(name, mazeAsByte);
 		}
+		myFileToOpen = null;
+		name  = null;
 			
+	}
+	@Override
+	public void setParams(String[] params) {
+		myFileToOpen = m.getFileFromPath(params[1]);
+		name = params[2];
+		
 	}
 
 }

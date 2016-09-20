@@ -11,9 +11,16 @@ public class ExitCommand implements Command {
 		this.v = v;
 		this.m = m;
 	}
+	
 	@Override
-	public void doCommand(String[] params) {
-	//TODO
+	public void doCommand() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void setParams(String[] params) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

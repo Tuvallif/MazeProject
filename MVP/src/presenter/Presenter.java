@@ -24,7 +24,14 @@ public class Presenter implements Observer{
 			String[] commandString = checkIfLegalCommand(arg.toString());
 			Command myCmnd = this.myHashMap.get(commandString[0]);
 			try{
-				myCmnd.doCommand(commandString);
+				myCmnd.setParams(commandString);
+				Thread myThrd = new Thread(new Runnable() {			
+					@Override
+					public void run() {
+						myCmnd.doCommand();						
+					}
+				});
+				myThrd.start();
 			}catch(NullPointerException npe){
 				//NEVER HAPPENS -just in case
 				v.printLineOnScreen("The command was not found");

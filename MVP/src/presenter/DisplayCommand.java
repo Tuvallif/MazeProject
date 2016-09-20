@@ -8,6 +8,7 @@ public class DisplayCommand implements Command {
 
 	View v;
 	Model m;
+	Maze3d mazeToPrnt;
 	
 	public DisplayCommand(View v, Model m){
 		this.v = v;
@@ -15,13 +16,18 @@ public class DisplayCommand implements Command {
 	}
 	
 	@Override
-	public void doCommand(String[] params) {
-		Maze3d mazeToPrnt = m.getMazeByName(params[1]);
+	public void doCommand() {	
 		if(mazeToPrnt != null){
 			v.PrintMazeOnScreen(mazeToPrnt.getBoard());		
 		}else{
 			v.printLineOnScreen("The requested maze was not found- please try again with a correct name.");
 		}
+		mazeToPrnt = null;
+	}
+
+	@Override
+	public void setParams(String[] params) {
+		mazeToPrnt = m.getMazeByName(params[1]);		
 	}
 	
 	

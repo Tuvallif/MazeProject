@@ -18,20 +18,24 @@ public class DisplaySolutionCommand implements Command {
 	
 	View v;
 	Model m;
+	List<Position> pathToWalk;
+	Maze3d MyMaze;
+	Searchable mysrcbl;
+	Search mySrc;
 	
 	public DisplaySolutionCommand(View v, Model m) {
 		this.v = v;
 		this.m = m;
 	}
 	@Override
-	public void doCommand(String[] params) {
-		List<Position> pathToWalk;
-		Maze3d MyMaze = m.getMazeByName(params[1]);
-		Searchable mysrcbl = new mySearchable(MyMaze);
-		Search mySrc = new BestFirstSearch(new BFS(mysrcbl, AbstractSearch.getComperator("best")));
+	public void doCommand() {
 		pathToWalk = mySrc.FindPath();
 		int[][][] toPrint= paintPath(MyMaze.getBoard(), pathToWalk);
-		v.PrintMazeOnScreen(toPrint);		
+		v.PrintMazeOnScreen(toPrint);
+		pathToWalk = null;
+		MyMaze = null ;
+		mysrcbl = null;
+		mySrc = null;
 	}
 	
 	private int[][][] paintPath(int[][][] board, List<Position> toWalk){
@@ -49,6 +53,15 @@ public class DisplaySolutionCommand implements Command {
 			}
 			
 		}
+
 		return toRtrn;
+	}
+	
+	@Override
+	public void setParams(String[] params) {
+		MyMaze = m.getMazeByName(params[1]);
+		mysrcbl = new mySearchable(MyMaze);
+		mySrc = new BestFirstSearch(new BFS(mysrcbl, AbstractSearch.getComperator("best")));
+		
 	}
 }

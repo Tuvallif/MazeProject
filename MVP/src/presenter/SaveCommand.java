@@ -12,6 +12,8 @@ public class SaveCommand implements Command{
 
 	View v;
 	Model m;
+	Maze3d mazeToUse;
+	File fileToSave;
 	
 	public SaveCommand(View v, Model m) {
 		this.v = v;
@@ -20,12 +22,10 @@ public class SaveCommand implements Command{
 
 
 	@Override
-	public void doCommand(String[] params) {
-		Maze3d mazeToUse = m.getMazeByName(params[1]);
+	public void doCommand() {
 		if(mazeToUse == null){
 			v.printLineOnScreen("The requested maze was not found, please try again later with a correct name.");
 		}else{
-			File fileToSave = m.getFileFromPath(params[2]);
 			try{
 			FileOutputStream fos = new FileOutputStream(fileToSave);
 			fos.write(mazeToUse.toByteArray());
@@ -40,7 +40,16 @@ public class SaveCommand implements Command{
 
 
 		}
+		mazeToUse = null;
+		fileToSave = null;
 
+	}
+
+
+	@Override
+	public void setParams(String[] params) {
+		mazeToUse = m.getMazeByName(params[1]);
+		fileToSave = m.getFileFromPath(params[2]);
 	}
 
 }

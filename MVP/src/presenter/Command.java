@@ -1,7 +1,9 @@
 package presenter;
 
-public interface Command {
+public interface Command{
 	
-	void doCommand(String[] params);
+	void doCommand();
+	
+	void setParams(String[] params);
 
 }
