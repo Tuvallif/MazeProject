@@ -9,20 +9,25 @@ public class FileSizeCommand implements Command {
 
 	Model m;
 	View v;
+	File myFile;
 	
 	public FileSizeCommand(View v, Model m) {
 		this.v = v;
 		this.m = m;
 	}
-
-	public void doCommand(String[] params) {
-		File myFile = m.getFileFromPath(params[1]);
+	@Override
+	public void doCommand() {
 		if(myFile != null){
 			v.printLineOnScreen(Long.toString(myFile.length()));
 		}
 		else{
 			v.printLineOnScreen("There was a problem with opnening the file or reading the data.");
 		}
+		myFile = null;
 	}
-
+	@Override
+	public void setParams(String[] params) {
+		myFile = m.getFileFromPath(params[1]);
+		
+	}
 }

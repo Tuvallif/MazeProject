@@ -31,7 +31,8 @@ public class CLI {
 				out.write("The string was not found OR could not found a command");
 			}
 			else{
-				cmnd.doCommand(params);
+				cmnd.setParams(params);
+				cmnd.doCommand();
 			}
 		}
 	}

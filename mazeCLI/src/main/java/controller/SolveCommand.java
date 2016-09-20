@@ -4,10 +4,7 @@ import algorithms.demo.Searchable;
 import algorithms.demo.mySearchable;
 import algorithms.maze.Maze3d;
 import algorithms.maze.Position;
-
-import java.util.Comparator;
 import java.util.List;
-
 import algorithms.search.AbstractSearch;
 import algorithms.search.BFS;
 import algorithms.search.BestFirstSearch;
@@ -20,6 +17,9 @@ public class SolveCommand implements Command {
 	
 	View v;
 	Model m;
+	String mazeName, srcType;
+	boolean valid;
+	List<Position> toReturn;
 	
 	public SolveCommand(View v, Model m) {
 		this.v = v;
@@ -27,13 +27,12 @@ public class SolveCommand implements Command {
 	}
 	
 	
-
-	public void doCommand(String[] params) {
+	@Override
+	public void doCommand() {
 		Maze3d myMaze;
 		Searchable mySrchbl = null;
 		Search mySrc = null;
-		String mazeName = params[1];
-		boolean valid = true;
+		valid = true;
 		List<Position> toReturn;
 		try{
 		if(mazeName != null){
@@ -46,13 +45,13 @@ public class SolveCommand implements Command {
 			return;
 		}
 		//checking the search type
-		if(params[2].toLowerCase().equals("bfs") && valid == true){
+		if(srcType.toLowerCase().equals("bfs") && valid == true){
 			mySrc = new BestFirstSearch(new BFS(mySrchbl, AbstractSearch.getComperator("c")));
 		}
-		else if(params[2].toLowerCase().equals("best") && valid == true){
+		else if(srcType.toLowerCase().equals("best") && valid == true){
 			mySrc = new BestFirstSearch(new BFS(mySrchbl, AbstractSearch.getComperator("best")));
 		}
-		else if(params[2].toLowerCase().equals("dfs") && valid == true){
+		else if(srcType.toLowerCase().equals("dfs") && valid == true){
 			mySrc = new BestFirstSearch(new DFS(mySrchbl));
 		}
 		//not valid
@@ -70,9 +69,18 @@ public class SolveCommand implements Command {
 		}catch(IndexOutOfBoundsException iobe){
 			v.printOnScreen("There was an out of abounds exception, please try again.");
 		}
-		
+		mazeName = null;
+		srcType = null;
+		toReturn = null;
 		
 
+	}
+
+
+	@Override
+	public void setParams(String[] params) {
+		mazeName = params[1];
+		srcType = params[2];
 	}
 
 }

@@ -79,7 +79,8 @@ public class MyController implements Controller{
 
 
 	public void excuteCommand(Command commandToExecute, String [] params) {
-		commandToExecute.doCommand(params);		
+		commandToExecute.setParams(params);
+		commandToExecute.doCommand();		
 	}
 	
 /*	@Override
