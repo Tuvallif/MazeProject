@@ -24,7 +24,7 @@ public class Demo {
 		Maze3d myMaze = myGernerator.generate();
 		myMaze.printMaze();
 		Searchable Srchble = new mySearchable(myMaze);
-		Search srcDFS = new BestFirstSearch(new DFS(Srchble));
+	  	Search srcDFS = new BestFirstSearch(new DFS(Srchble));
 		Search srcBFS = new BestFirstSearch(new BFS(Srchble, c));
 		Search srcBestFS = new BestFirstSearch(new BFS(Srchble, best));
 
