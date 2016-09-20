@@ -27,7 +27,7 @@ public class MyModel implements Model {
 		threadPool = Executors.newFixedThreadPool(10);
 	}
 	
-	@Override
+
 	public void generateMaze(String name, int height, int width, int depth){
 		if(this.nameAlreadyUsed(name) == "OK"){
 		Position start = new MyPosition(0, 0, 0);
@@ -52,7 +52,7 @@ public class MyModel implements Model {
 		return mazeToRtrn;
 	}*/
 	
-	@Override
+
 	public void generateMaze(String name, byte[] mazeInByte){
 		if(this.nameAlreadyUsed(name) == "OK"){
 		Maze3d mazeToSave = new MyMaze3d(mazeInByte);
@@ -67,7 +67,7 @@ public class MyModel implements Model {
 		return myMazes.get(name);
 	}
 
-	@Override
+
 	public int[][] getCrossOfMaze(String name, char XYZ, int index) {
 		Maze3d mazeHelper = getMazeByName(name);
 		int[][] toPrint = null;
@@ -104,12 +104,12 @@ public class MyModel implements Model {
 		return toPrint;
 	}
 
-	@Override
+
 	public void SaveMazeToFile(String mazeName, String fileName) {
 		
 	}
 
-	@Override
+
 	public File getFileFromPath(String path) throws NullPointerException{
 		File fileToFind = new File(path);
 		try{

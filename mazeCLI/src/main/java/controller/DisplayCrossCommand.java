@@ -15,7 +15,7 @@ public class DisplayCrossCommand implements Command {
 		this.m = m;
 	}
 	
-	@Override
+
 	public void doCommand(String[] params){
 		Maze3d myMaze = m.getMazeByName(params[3]);
 		int[][] toPrnt;

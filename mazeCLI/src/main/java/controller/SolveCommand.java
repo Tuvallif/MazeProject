@@ -27,7 +27,7 @@ public class SolveCommand implements Command {
 	}
 	
 	
-	@Override
+
 	public void doCommand(String[] params) {
 		Maze3d myMaze;
 		Searchable mySrchbl = null;

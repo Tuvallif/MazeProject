@@ -9,7 +9,7 @@ public class ErrorCommand implements Command {
 	public ErrorCommand(View v){
 		this.v= v;
 	}
-	@Override
+
 	public void doCommand(String [] params) {
 		v.printLineOnScreen(params[1]);
 	}

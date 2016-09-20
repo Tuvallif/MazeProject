@@ -17,7 +17,7 @@ public class DisplayCommand implements Command {
 	public void doCommand(String[] params) {
 		Maze3d mazeToPrnt = m.getMazeByName(params[1]);
 		if(mazeToPrnt != null){
-			v.PrintMazeOnScreen(mazeToPrnt.getb);		
+			v.PrintMazeOnScreen(mazeToPrnt.getBoard());		
 		}else{
 			v.printLineOnScreen("The requested maze was not found- please try again with a correct name.");
 		}

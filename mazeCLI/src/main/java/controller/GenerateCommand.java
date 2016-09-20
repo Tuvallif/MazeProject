@@ -14,7 +14,7 @@ public class GenerateCommand implements Command {
 		this.m = m;
 	}
 	
-	@Override
+
 	public void doCommand(String[] params) {
 		int height, width, depth;
 		try{

@@ -20,7 +20,7 @@ public class LoadCommand implements Command {
 		this.v = v;
 		this.m = m;
 	}
-	@Override
+
 	public void doCommand(String[] params) {
 		byte [] mazeAsByte = new byte[1000];
 		File myFileToOpen = m.getFileFromPath(params[1]);

@@ -14,7 +14,7 @@ public class FileSizeCommand implements Command {
 		this.v = v;
 		this.m = m;
 	}
-	@Override
+
 	public void doCommand(String[] params) {
 		File myFile = m.getFileFromPath(params[1]);
 		if(myFile != null){

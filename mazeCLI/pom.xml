@@ -6,11 +6,4 @@
 	<artifactId>cli</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
-	<dependencies>
-		<dependency>
-			<groupId>org.tuval</groupId>
-			<artifactId>maze</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-	</dependencies>
 </project>

@@ -18,21 +18,21 @@ public class MyController implements Controller{
 
 	}
 	
-	@Override
+
 	public void setModel(Model m) {
 		this.m = m;
 		
 	}
 	
-	@Override
+
 	public void setView(view.View v) {
 		this.v = v;
 		
 	}
 
-	@Override
+
 	public void setHashMap(){
-		myHashMap = new HashMap<>();
+		myHashMap = new HashMap<String, Command>();
 		Command myDirCommand = new DirCommand(v,m);
 		Command myDisplayCommand = new DisplayCommand(v,m);
 		Command myDisplayCrossCommand = new DisplayCrossCommand(v,m);
@@ -58,12 +58,12 @@ public class MyController implements Controller{
 		myHashMap.put("exit", myExitCommand);
 		myHashMap.put("error", myErrorCommand);		
 	}
-	@Override
+
 	public void PrintOnScreen(String toPrnt) {
 		v.printLineOnScreen(toPrnt);		
 	}
 
-	@Override
+
 	public String getDataFromScreen() {
 		return v.getData();
 	}
@@ -77,7 +77,7 @@ public class MyController implements Controller{
 		return toRtrn;
 	}*/
 
-	@Override
+
 	public void excuteCommand(Command commandToExecute, String [] params) {
 		commandToExecute.doCommand(params);		
 	}
@@ -230,7 +230,7 @@ public class MyController implements Controller{
 	
 	
 	
-	@Override
+
 	public Maze3d getMaze(String name) {
 		return m.getMazeByName(name);
 	}
@@ -244,10 +244,10 @@ public class MyController implements Controller{
 		return toRtrn;
 	}*/
 
-@Override
-public HashMap<String, Command> getMap() {
-	return myHashMap;
-}
+
+	public HashMap<String, Command> getMap() {
+		return myHashMap;
+	}
 	
 	
 	

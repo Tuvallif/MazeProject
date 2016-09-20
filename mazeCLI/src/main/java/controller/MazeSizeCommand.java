@@ -17,7 +17,7 @@ public class MazeSizeCommand implements Command {
 		this.m = m;
 	}
 	
-	@Override
+
 	public void doCommand(String[] params) {
 		String name = params[1];
 		Maze3d mazeToChck = m.getMazeByName(name);
