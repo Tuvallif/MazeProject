@@ -15,7 +15,5 @@ public interface View {
 	void PrintMazeOnScreen(int[][][] toPrint);
 	
 	void PrintMazeCross(int[][] crossToPrint);
-	
-	void setFile(File fileToSet);
 
 }

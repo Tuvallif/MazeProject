@@ -104,12 +104,6 @@ public class CLIGameView extends Observable implements View  {
 		}
 		printLineOnScreen("");
 	}
-
-	@Override
-	public void setFile(File fileToSet) {
-		// TODO Auto-generated method stub
-		
-	}
 	
 }
 	
