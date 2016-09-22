@@ -31,7 +31,7 @@ public class DFS extends AbstractSearch {
 	/* (non-Javadoc)
 	 * @see algorithms.search.Search#FindPath()
 	 */
-	public List<Position> FindPath() {
+	public Solution FindPath() {
 		List<Position> result = new LinkedList<Position>();
 		Stack<Position> toVisit = new Stack<Position>();
 		// creating the Position from the goal position
@@ -54,7 +54,7 @@ public class DFS extends AbstractSearch {
 			}
 		}
 
-		myPath = srchbl.CreatePositionPathFromVertex();
+		myPath.setMySolution(srchbl.CreatePositionPathFromVertex());
 		return myPath;
 		// return result;
 	}

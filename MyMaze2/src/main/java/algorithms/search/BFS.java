@@ -36,7 +36,7 @@ public class BFS extends AbstractSearch {
 	/* (non-Javadoc)
 	 * @see algorithms.search.Search#FindPath()
 	 */
-	public List<Position> FindPath() {
+	public Solution FindPath() {
 		List<Position> result = new LinkedList<Position>();
 		PriorityQueue<Position> toVisit = new PriorityQueue<Position>(myComp);
 		// creating the Position from the goal position
@@ -59,7 +59,7 @@ public class BFS extends AbstractSearch {
 				}
 			}
 		}
-		myPath = srchbl.CreatePositionPathFromVertex();
+		myPath.setMySolution(srchbl.CreatePositionPathFromVertex());
 		return myPath;
 		// return result;
 	}

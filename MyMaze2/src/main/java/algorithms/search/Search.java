@@ -16,7 +16,7 @@ public interface Search extends Comparator<Position> {
 	 * This method finds the path according to the implemented way
 	 * @return
 	 */
-	List<Position> FindPath();
+	Solution FindPath();
 
 	/* (non-Javadoc)
 	 * @see java.util.Comparator#compare(java.lang.Object, java.lang.Object)

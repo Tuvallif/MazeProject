@@ -15,7 +15,7 @@ public abstract class AbstractSearch implements Search {
 	/**
 	 * the path that was created from the search algorithem
 	 */
-	List<Position> myPath;
+	Solution myPath;
 	
 	/**
 	 * the searchable type to search in

@@ -30,7 +30,7 @@ public class BestFirstSearch extends AbstractSearch {
 	/* (non-Javadoc)
 	 * @see algorithms.search.Search#FindPath()
 	 */
-	public List<Position> FindPath() {
+	public Solution FindPath() {
 		return src.FindPath();
 	}
 	

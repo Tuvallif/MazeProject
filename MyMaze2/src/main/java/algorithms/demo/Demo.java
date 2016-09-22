@@ -12,6 +12,7 @@ import algorithms.search.BFS;
 import algorithms.search.BestFirstSearch;
 import algorithms.search.DFS;
 import algorithms.search.Search;
+import algorithms.search.Solution;
 
 public class Demo {
 
@@ -28,16 +29,16 @@ public class Demo {
 		Search srcBFS = new BestFirstSearch(new BFS(Srchble, c));
 		Search srcBestFS = new BestFirstSearch(new BFS(Srchble, best));
 
-		List<Position> DFSPath = srcDFS.FindPath();
-		List<Position> BFSPath = srcBFS.FindPath();
-		List<Position> BestFSPath = srcBestFS.FindPath();
+		Solution DFSPath = srcDFS.FindPath();
+		Solution BFSPath = srcBFS.FindPath();
+		Solution BestFSPath = srcBestFS.FindPath();
 
 		System.out.println("dfs");
-		int i = printPath(DFSPath);
+		int i = printPath(DFSPath.getMySolution());
 		System.out.println("bfs");
-		int j = printPath(BFSPath);
+		int j = printPath(BFSPath.getMySolution());
 		System.out.println("bestfs");
-		int k = printPath(BestFSPath);
+		int k = printPath(BestFSPath.getMySolution());
 		
 		byte[] myByte = myMaze.toByteArray();
 		Maze3d myMazeFromByte = new MyMaze3d(myByte);
