@@ -3,6 +3,7 @@ package model;
 import java.io.File;
 
 import algorithms.maze.Maze3d;
+import algorithms.search.Solution;
 
 public interface Model{
 	
@@ -17,5 +18,7 @@ public interface Model{
 	 File getFileFromPath(String path);
 
 	void generateMaze(String name, byte[] mazeInByte);
+	
+	Solution getSlForMaze(String myMaze, String mySrc);
 	
 }

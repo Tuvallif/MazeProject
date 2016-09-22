@@ -10,6 +10,7 @@ import algorithms.search.AbstractSearch;
 import algorithms.search.BFS;
 import algorithms.search.BestFirstSearch;
 import algorithms.search.Search;
+import algorithms.search.Solution;
 import model.Model;
 import view.View;
 
@@ -18,7 +19,7 @@ public class DisplaySolutionCommand implements Command {
 	
 	View v;
 	Model m;
-	List<Position> pathToWalk;
+	Solution pathToWalk;
 	Maze3d MyMaze;
 	Searchable mysrcbl;
 	Search mySrc;
@@ -38,13 +39,13 @@ public class DisplaySolutionCommand implements Command {
 		mySrc = null;
 	}
 	
-	private int[][][] paintPath(int[][][] board, List<Position> toWalk){
+	private int[][][] paintPath(int[][][] board, Solution toWalk){
 		int[][][] toRtrn = new int[board.length][board[0].length][board[0][0].length];
 		//going over all the board
 		for (int i = 0; i < board.length; ++i) {
 			for (int j = 0; j < board[i].length; ++j) {
 				for (int k = 0; k < board[i][j].length; ++k) {
-					if(toWalk.contains(new MyPosition(i,j,k))){
+					if(toWalk.getMySolution().contains(new MyPosition(i,j,k))){
 						toRtrn[i][j][k] = 2;
 					}else{
 						toRtrn[i][j][k] = board[i][j][k];

@@ -1,9 +1,11 @@
 package presenter;
 
+import java.util.concurrent.Callable;
+
 import model.Model;
 import view.View;
 
-public class GenerateCommand implements Command, Runnable {
+public class GenerateCommand implements Command {
 	
 	Model m;
 	View v;
@@ -42,10 +44,7 @@ public class GenerateCommand implements Command, Runnable {
 		
 	}
 
-	@Override
-	public void run() {
-		doCommand();		
-	}
+
 
 
 	

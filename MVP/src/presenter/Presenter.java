@@ -3,6 +3,10 @@ package presenter;
 import java.util.HashMap;
 import java.util.Observable;
 import java.util.Observer;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadPoolExecutor;
+
 import model.GameModel;
 import view.CLIGameView;
 
@@ -11,6 +15,7 @@ public class Presenter implements Observer{
 	private CLIGameView v;
 	private GameModel m;
 	private HashMap<String,Command> myHashMap;
+	ExecutorService myThreadPl = Executors.newFixedThreadPool(10);
 	
 	public Presenter(CLIGameView v, GameModel m){
 		this.v = v;
@@ -25,13 +30,7 @@ public class Presenter implements Observer{
 			Command myCmnd = this.myHashMap.get(commandString[0]);
 			try{
 				myCmnd.setParams(commandString);
-				Thread myThrd = new Thread(new Runnable() {			
-					@Override
-					public void run() {
-						myCmnd.doCommand();						
-					}
-				});
-				myThrd.start();
+				myCmnd.doCommand();
 			}catch(NullPointerException npe){
 				//NEVER HAPPENS -just in case
 				v.printLineOnScreen("The command was not found");
