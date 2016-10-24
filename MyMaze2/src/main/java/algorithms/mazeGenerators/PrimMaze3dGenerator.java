@@ -73,16 +73,16 @@ public class PrimMaze3dGenerator extends AbstractMaze3dGenerator implements Maze
 
 	private void printMaze() {
 		System.out.println("PRINTING PRIM");
-		for (int k = 0; k < this.maze.getDepth(); ++k) {
+		for (int k = 0; k < this.maze.getHeight(); ++k) {
 			System.out.println(" d =" + k);
-			for (int i = 0; i < this.maze.getHeight(); ++i) {
+			for (int i = 0; i < this.maze.getWidth(); ++i) {
 
-				for (int j = 0; j < this.maze.getWidth(); ++j) {
+				for (int j = 0; j < this.maze.getDepth(); ++j) {
 
 					// System.out.print(" i ="+ i);
 					// System.out.print(" j ="+ j);
 					// System.out.print(" k ="+ k + "value is ");
-					System.out.print(this.maze.getValueAtPosition(new MyPosition(i, j, k)));
+					System.out.print(this.maze.getValueAtPosition(new MyPosition(k, i,j)));
 				}
 				System.out.println();
 			}

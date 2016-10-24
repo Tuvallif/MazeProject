@@ -1,11 +1,12 @@
 package algorithms.search;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 
 import algorithms.maze.Position;
 
-public class Solution {
+public class Solution  implements Serializable{
 	
 	List<Position> mySolution;
 	

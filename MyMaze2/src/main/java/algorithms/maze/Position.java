@@ -1,10 +1,12 @@
 package algorithms.maze;
 
+import java.io.Serializable;
+
 /**
  * @author Tuval Lifshitz
  *
  */
-public interface Position extends Comparable<Position> {
+public interface Position extends Comparable<Position>, Serializable {
 	/**
 	 * @return -the height of the Position
 	 */
@@ -19,6 +21,10 @@ public interface Position extends Comparable<Position> {
 	 * @return - the depth of the Position
 	 */
 	int getDepth();
+	
+	void setHeight(int height);
+	void setWidth(int width);
+	void setDepth(int depth);
 
 	/**
 	 * @return - a string of information about the Position values like this:

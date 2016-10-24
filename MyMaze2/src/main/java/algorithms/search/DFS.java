@@ -26,6 +26,7 @@ public class DFS extends AbstractSearch {
 	public DFS(Searchable maze) {
 		this.srchbl = maze;
 		vertexConections = new LinkedList<Vertex>();
+		myPath = new Solution();
 	}
 
 	/* (non-Javadoc)
@@ -54,7 +55,8 @@ public class DFS extends AbstractSearch {
 			}
 		}
 
-		myPath.setMySolution(srchbl.CreatePositionPathFromVertex());
+		List<Position> toAdd = srchbl.CreatePositionPathFromVertex();
+		myPath.setMySolution(toAdd);
 		return myPath;
 		// return result;
 	}

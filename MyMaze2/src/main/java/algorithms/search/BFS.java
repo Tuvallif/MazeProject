@@ -31,6 +31,7 @@ public class BFS extends AbstractSearch {
 		this.srchbl = srcbrd;
 		this.myComp = myComparator;
 		myComp.compare(new MyPosition(1,1,1), new MyPosition(2,2,2));
+		myPath = new Solution();
 	}
 
 	/* (non-Javadoc)
