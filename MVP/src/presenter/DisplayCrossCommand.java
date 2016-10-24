@@ -2,6 +2,7 @@ package presenter;
 
 import algorithms.maze.Maze3d;
 import model.Model;
+import view.CLIGameView;
 import view.View;
 
 public class DisplayCrossCommand implements Command {
@@ -10,6 +11,7 @@ public class DisplayCrossCommand implements Command {
 	Model m;
 	Maze3d myMaze;
 	String section;
+	String name;
 	int index;
 
 	public DisplayCrossCommand(View v, Model m){
@@ -29,31 +31,40 @@ public class DisplayCrossCommand implements Command {
 			v.printLineOnScreen("could not convert your index, please try again");
 		}
 		else{
-		
-			if(section.toLowerCase() == "x"){
+			System.out.println("index = " + index);
+			
+			if(section.toLowerCase().equals("x")){
 				toPrnt = myMaze.getCrossSectionByX(index);
 			}
-			else if( section.toLowerCase() == "y"){
+			else if( section.toLowerCase().equals("y")){
 				toPrnt = myMaze.getCrossSectionByY(index);
 			}
-			else if(section.toLowerCase() == "z"){
+			else if(section.toLowerCase().equals("z")){
 				toPrnt = myMaze.getCrossSectionByZ(index);
 			}else{
+				System.out.println("myMaze = " + myMaze + " section  =" + section + " index =" + index);
 				v.printLineOnScreen("Please eneter a valid dimention(X/Y/Z) or index next time.");
 				toPrnt = null;
 			}
 
 			//just making sure
 			if(toPrnt != null){
+				if(v.getClass().equals(CLIGameView.class)){
 				v.PrintMazeCross(toPrnt);
+				}
+				else{
+					v.PrintMazeCross(m.getMazeCrossByHeight(name, index));
+				}
 			}
 		}
 		myMaze = null;
 		section  = null;
+		System.out.println("printed?");
 	}
 
 	@Override
 	public void setParams(String[] params) {
+		name = params[3];
 		myMaze = m.getMazeByName(params[3]);
 		section = params[1];
 		try{

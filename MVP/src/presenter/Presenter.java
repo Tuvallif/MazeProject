@@ -1,5 +1,6 @@
 package presenter;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Observable;
 import java.util.Observer;
@@ -7,13 +8,17 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
 
+import algorithms.search.Solution;
 import model.GameModel;
+import model.Model;
 import view.CLIGameView;
+import view.MazeWindow;
+import view.View;
 
 public class Presenter implements Observer{
 
-	private CLIGameView v;
-	private GameModel m;
+	private View v;
+	private Model m;
 	private HashMap<String,Command> myHashMap;
 	ExecutorService myThreadPl = Executors.newFixedThreadPool(10);
 	
@@ -21,12 +26,31 @@ public class Presenter implements Observer{
 		this.v = v;
 		this.m = m;
 		this.initializeCommandMap();
+		m.loadSolutionFromFile();
+		
+	}
+	
+//	public Presenter(GUIView v, GameModel m){
+//		this.v = v;
+//		this.m = m;
+//		this.initializeCommandMap();
+//		m.loadSolutionFromFile();
+//		
+//	}
+	
+	public Presenter(MazeWindow v, GameModel m){
+		this.v = v;
+		this.m = m;
+		this.initializeCommandMap();
+		m.loadSolutionFromFile();
 		
 	}
 	@Override
 	public void update(Observable o, Object arg) {
 		if(o.equals(v)){
+			System.out.println(arg.toString());
 			String[] commandString = checkIfLegalCommand(arg.toString());
+			//System.out.println(commandString.toString());
 			Command myCmnd = this.myHashMap.get(commandString[0]);
 			try{
 				myCmnd.setParams(commandString);
@@ -44,6 +68,10 @@ public class Presenter implements Observer{
 			}
 			else if((arg.getClass().equals(int[][][].class))){
 				v.PrintMazeOnScreen((int[][][])arg);
+			}
+			else if((arg.getClass().equals(Solution.class))){
+				System.out.println("arg was transfered as solution");
+				v.setSolutionList((Solution)arg);
 			}
 		}
 		
@@ -208,10 +236,12 @@ public class Presenter implements Observer{
 				toRtrn = returnErrorString("Please enter the name of the maze in the format - solve <name> <algorithm>" );				 
 			}
 			break;
+			
 		case "exit":
 			toRtrn = new String[1];
 			toRtrn[0] = "exit";
 			break;
+			
 		default:
 			toRtrn = returnErrorString("could not found your command - please try again later." );
 		}

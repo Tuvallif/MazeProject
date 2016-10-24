@@ -11,6 +11,8 @@ import java.util.Arrays;
 import java.util.Observable;
 import java.util.Scanner;
 
+import algorithms.search.Solution;
+
 public class CLIGameView extends Observable implements View  {
 
 	BufferedReader in;
@@ -103,6 +105,12 @@ public class CLIGameView extends Observable implements View  {
 			printLineOnScreen("");
 		}
 		printLineOnScreen("");
+	}
+
+	@Override
+	public void setSolutionList(Solution mySol) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

@@ -1,6 +1,7 @@
 package model;
 
 import java.io.File;
+import java.io.IOException;
 
 import algorithms.maze.Maze3d;
 import algorithms.search.Solution;
@@ -20,5 +21,14 @@ public interface Model{
 	void generateMaze(String name, byte[] mazeInByte);
 	
 	Solution getSlForMaze(String myMaze, String mySrc);
+
+	void saveSolutionToFile();
+
+	void loadSolutionFromFile();
+
+	int[][] getMazeCrossByHeight(String name, int height);
+
+	int[][][] getMazeWithAllOptions(String name);
+	
 	
 }

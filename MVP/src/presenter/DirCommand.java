@@ -15,7 +15,6 @@ public class DirCommand implements Command {
 		this.m = m;
 	}
 	
-	@Override
 	public void doCommand() {
 		if(fileToSend != null && !fileToSend.isDirectory()){
 			v.printLineOnScreen("The requested file is not a directory, please try again later with directory.");

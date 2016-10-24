@@ -2,6 +2,8 @@ package view;
 
 import java.io.File;
 
+import algorithms.search.Solution;
+
 public interface View {
 
 	void start();
@@ -15,5 +17,7 @@ public interface View {
 	void PrintMazeOnScreen(int[][][] toPrint);
 	
 	void PrintMazeCross(int[][] crossToPrint);
+
+	void setSolutionList(Solution mySol);
 
 }

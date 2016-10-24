@@ -1,4 +1,6 @@
 package presenter;
+import java.io.IOException;
+
 import model.Model;
 import view.View;
 
@@ -14,7 +16,7 @@ public class ExitCommand implements Command {
 	
 	@Override
 	public void doCommand() {
-		// TODO Auto-generated method stub
+		m.saveSolutionToFile();
 		
 	}
 	@Override
