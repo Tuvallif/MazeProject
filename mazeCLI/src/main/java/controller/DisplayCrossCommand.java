@@ -3,7 +3,12 @@ package controller;
 import algorithms.maze.Maze3d;
 import model.Model;
 import view.View;
-
+/**
+ * This class is about displaying the board of the maze 
+ * According to one cross in a certain index
+ * @author Tuval Lifshitz
+ *
+ */
 public class DisplayCrossCommand implements Command {
 
 	View v;

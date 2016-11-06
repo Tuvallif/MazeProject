@@ -3,12 +3,17 @@ package controller;
 import algorithms.maze.Maze3d;
 import model.Model;
 import view.View;
-
+/**
+ * This class is about displaying the maze on the screen-it show the whole maze on the screen for the user
+ * @author Tuval Lifshitz
+ *
+ */
 public class DisplayCommand implements Command {
 
 	View v;
 	Model m;
 	Maze3d mazeToPrnt;
+	String name;
 	
 	public DisplayCommand(View v, Model m){
 		this.v = v;
@@ -17,17 +22,26 @@ public class DisplayCommand implements Command {
 	
 	@Override
 	public void doCommand() {	
+		//if there is maze toPrint
 		if(mazeToPrnt != null){
+			//there is no maze toPrint
 			v.PrintMazeOnScreen(mazeToPrnt.getBoard());		
-		}else{
+		}
+		//there is no maze toPrint
+		else{
 			v.printLineOnScreen("The requested maze was not found- please try again with a correct name.");
 		}
+		//bringing it back to null
 		mazeToPrnt = null;
 	}
+	
 
 	@Override
 	public void setParams(String[] params) {
-		mazeToPrnt = m.getMazeByName(params[1]);		
+		//getting the maze name
+		name = params[1];
+		//initializing the maze
+		mazeToPrnt = m.getMazeByName(name);		
 	}
 	
 	

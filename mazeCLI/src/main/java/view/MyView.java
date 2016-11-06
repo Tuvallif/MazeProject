@@ -32,6 +32,7 @@ public class MyView implements View {
 
 	@Override
 	public void start(){
+		// anew CLI
 		myCLI = new CLI(myBuff, myWrt, c.getMap());
 		try{
 		myCLI.start();
