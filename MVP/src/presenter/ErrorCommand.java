@@ -1,12 +1,20 @@
 package presenter;
 
 import view.View;
-
+/**
+ * This class is n error case of command
+ * @author Tuval Lifshitz
+ *
+ */
 public class ErrorCommand implements Command {
 
 	View v;
 	String toPrint;
 	
+	/**
+	 * The constructor just initialize the parameters
+	 * @param v view as the user chooses to use
+	 */
 	public ErrorCommand(View v){
 		this.v= v;
 	}
@@ -14,8 +22,10 @@ public class ErrorCommand implements Command {
 	@Override
 	public void doCommand() {
 		try{
-		v.printLineOnScreen(toPrint);
+			//there was an error - printing it on the screen
+			v.printLineOnScreen(toPrint);
 		}catch(NullPointerException npe){
+			//the message was not found
 			v.printLineOnScreen("NO MESSAGE FOUND");
 		}
 		toPrint = null;
@@ -23,6 +33,7 @@ public class ErrorCommand implements Command {
 
 	@Override
 	public void setParams(String[] params) {
+		//getting the message
 		toPrint = params[1];		
 	}
 

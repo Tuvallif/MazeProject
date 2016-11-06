@@ -12,19 +12,28 @@ import java.util.Observable;
 import java.util.Scanner;
 
 import algorithms.search.Solution;
-
+/**
+ * This clas is a View class using the cli in the pc.
+ * @author Tuval Lifshitz
+ *
+ */
 public class CLIGameView extends Observable implements View  {
 
 	BufferedReader in;
 	PrintWriter out;
 	
 	@Override
+	/**
+	 * This metho9d starts the view and makes it appear on the screen with everything that needed for the program to work
+	 */
 	public void start() {
+		//buffered reader and writer
 		in = new BufferedReader(new InputStreamReader(System.in));
 		out = new PrintWriter(new OutputStreamWriter(System.out));
 		String commandString = "start";
 		this.printGuide();
 		//SHOULD BE IN A NULL TRY CATCH???
+		//while everything is ok and not exit
 		while(!commandString.toLowerCase().equals("exit")){
 			out.write("Please enter you command:");
 			out.flush();
@@ -40,6 +49,9 @@ public class CLIGameView extends Observable implements View  {
 
 	}
 
+	/**
+	 * This methoid prints the guide of the cliview on the screen and the user can look and pick what he wants to do
+	 */
 	public void printGuide(){
 		System.out.println("Please enter your command in the following format:\n"
 				+ "dir <path>\n"

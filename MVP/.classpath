@@ -17,6 +17,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="swt_Windows64.jar"/>
-	<classpathentry kind="lib" path="testAlgo.jar"/>
+	<classpathentry kind="lib" path="mazeJar.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
