@@ -1,8 +1,23 @@
 package io;
 
+/**
+ * this class has tools that help us do what we need to to with our program
+ * it is kind of like helpers that are around the program
+ * @author Tuval Lifshitz
+ *
+ */
 public class Tools {
 
+	/**
+	 * This method trims the array to the valid data that we really need 
+	 * because sometimes it could be bigger and adds the data that we need-the start and the size
+	 * @param byteArray an array of bytes that represents our maze
+	 * @param start int that represents the start of the maze
+	 * @param size int that represents the size of the maze- height:width:depth
+	 * @return a full array with all the data in an array of byte together
+	 */
 	public static byte[] trim(byte[] byteArray, int start, int size) {
+		//creating the new byte[]
 		byte[] toReturn = new byte[size];
 		for (int i = 0; i < size; ++i) {
 			toReturn[i] = byteArray[start + i];
@@ -11,10 +26,22 @@ public class Tools {
 		return toReturn;
 	}
 
+	/**
+	 * This method trims the array to the valid data that we really need 
+	 * because sometimes it could be bigger and adds the data that we need-the start for generic size
+	 * @param byteArray an array of bytes that represents our maze
+	 * @param start int that represents the start of the maze
+	 * @return a full array with all the data in an array of byte together
+	 */
 	public static byte[] trim(byte[] byteArray, int start) {
 		return trim(byteArray, start, byteArray.length - start);
 	}
 	
+	/**
+	 * This method compresses the data in the maze in the way that can be transfered easily and faster
+	 * @param toCompress
+	 * @return
+	 */
 	public static byte[] compress(byte[] toCompress) {
 		byte[] toReturn = new byte[toCompress.length];
 		int value = 0;
@@ -42,7 +69,11 @@ public class Tools {
 
 		return trim(toReturn, 0, position);
 	}
-
+	/**
+	 * 	This method decompresses the data in the maze after being compressed while transfered
+	 * @param toDecompress the maze as a byte[]
+	 * @return a decompressed byte[] that can be interpreted
+	 */
 	public static byte[] decompress(byte[] toDecompress) {
 		//first 9 cells
 		int counter = 9;

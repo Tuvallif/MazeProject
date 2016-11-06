@@ -20,26 +20,30 @@ public class Demo {
 	 * This method runs a creation of a maze, and than finds a path using BFS, DFS, and bestFS
 	 */
 	public void Run() {
-
+		//Creases the generator
 		Maze3dGenerator myGernerator = new PrimMaze3dGenerator(10,10,10);
+		//generates the maze
 		Maze3d myMaze = myGernerator.generate();
+		//print it on the screen
 		myMaze.printMaze();
+		//makes it into searchable
 		Searchable Srchble = new mySearchable(myMaze);
+		//creating all the search algorithms
 	  	Search srcDFS = new BestFirstSearch(new DFS(Srchble));
 		Search srcBFS = new BestFirstSearch(new BFS(Srchble, c));
 		Search srcBestFS = new BestFirstSearch(new BFS(Srchble, best));
-
+		//creating solutions 
 		Solution DFSPath = srcDFS.FindPath();
 		Solution BFSPath = srcBFS.FindPath();
 		Solution BestFSPath = srcBestFS.FindPath();
-
+		//printing on screen-just to see
 		System.out.println("dfs");
 		int i = printPath(DFSPath.getMySolution());
 		System.out.println("bfs");
 		int j = printPath(BFSPath.getMySolution());
 		System.out.println("bestfs");
 		int k = printPath(BestFSPath.getMySolution());
-		
+		//again with bytes
 		byte[] myByte = myMaze.toByteArray();
 		Maze3d myMazeFromByte = new MyMaze3d(myByte);
 		System.out.println(myMaze);

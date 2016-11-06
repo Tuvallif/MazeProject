@@ -9,6 +9,9 @@ import algorithms.demo.Vertex;
 import algorithms.maze.Position;
 
 /**
+ * DFS (Depth-first search)is an algorithm for traversing or searching tree or graph data structures. 
+ * One starts at the root (selecting some arbitrary node as the root in the case of a graph) 
+ * and explores as far as possible along each branch before backtracking.
  * @author Tuval Lifshitz
  *
  */
@@ -21,12 +24,14 @@ public class DFS extends AbstractSearch {
 	List<Vertex> vertexConections;
 
 	/**
+	 * This constructor receives a searrchable(an object to search in)
+	 * it will initialize the vertex list and the Solution
 	 * @param maze
 	 */
 	public DFS(Searchable maze) {
 		this.srchbl = maze;
 		vertexConections = new LinkedList<Vertex>();
-		myPath = new Solution();
+		setMyPath(new Solution());
 	}
 
 	/* (non-Javadoc)
@@ -56,8 +61,8 @@ public class DFS extends AbstractSearch {
 		}
 
 		List<Position> toAdd = srchbl.CreatePositionPathFromVertex();
-		myPath.setMySolution(toAdd);
-		return myPath;
+		getMyPath().setMySolution(toAdd);
+		return getMyPath();
 		// return result;
 	}
 

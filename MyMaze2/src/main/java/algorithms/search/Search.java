@@ -1,8 +1,6 @@
 package algorithms.search;
 
 import java.util.Comparator;
-import java.util.List;
-
 import algorithms.maze.Position;
 
 /**

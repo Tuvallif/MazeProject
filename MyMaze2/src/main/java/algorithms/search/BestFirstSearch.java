@@ -1,11 +1,5 @@
 package algorithms.search;
 
-import java.util.Comparator;
-import java.util.List;
-
-import algorithms.maze.MyPosition;
-import algorithms.maze.Position;
-
 /**
  * @author Tuval Lifshitz
  *This class contains another object search that by using it it knows how to work

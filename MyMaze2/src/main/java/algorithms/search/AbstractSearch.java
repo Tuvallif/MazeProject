@@ -1,8 +1,6 @@
 package algorithms.search;
 
 import java.util.Comparator;
-import java.util.List;
-
 import algorithms.demo.Searchable;
 import algorithms.maze.Position;
 
@@ -15,17 +13,17 @@ public abstract class AbstractSearch implements Search {
 	/**
 	 * the path that was created from the search algorithem
 	 */
-	Solution myPath;
+	private Solution myPath;
 	
 	/**
 	 * the searchable type to search in
 	 */
-	Searchable srchbl;
+	protected Searchable srchbl;
 	
 	/**
 	 * a comparator to check which one is bigger
 	 */
-	Comparator<Position> myComp;
+	protected Comparator<Position> myComp;
 
 	/* (non-Javadoc)
 	 * @see algorithms.search.Search#compare(algorithms.maze.Position, algorithms.maze.Position)
@@ -61,6 +59,14 @@ public abstract class AbstractSearch implements Search {
 		else{
 			return c;
 		}
+	}
+
+	public Solution getMyPath() {
+		return myPath;
+	}
+
+	public void setMyPath(Solution myPath) {
+		this.myPath = myPath;
 	}
 
 }

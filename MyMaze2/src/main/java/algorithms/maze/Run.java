@@ -39,7 +39,10 @@ public class Run {
 			System.out.println("good!");
 		}
 	}
-	
+	/**
+	 * This method checks if what we did was good for debugging
+	 * @param mg the maze to check if in did the transfer worked
+	 */
 	private static void testByteArray(Maze3dGenerator mg) {
 		
 		// generate another 3d maze
